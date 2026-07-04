@@ -48,8 +48,8 @@ def run_inference(image_path: str, output_dir: str = "results"):
     output_dir.mkdir(parents=True, exist_ok=True)
 
     config = InferenceConfig(
-        seg_checkpoint="Nornikel/checkpoints/talc/best_model.pt",
-        cls_checkpoint="Nornikel/checkpoints/classification/best_model.pt",
+        seg_checkpoint="checkpoints/talc/best_model.pt",
+        cls_checkpoint="checkpoints/classification/best_model.pt",
         device="cuda" if torch.cuda.is_available() else "cpu",
         segmentation_threshold=0.5,
         chunk_size=512,
